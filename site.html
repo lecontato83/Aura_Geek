@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek News BR - Agregador Geek Brasileiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech&family=Sixtyfour&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&family=VT323&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
+        body {
+            font-family:  Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000000;
+        }
+        header {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+            color: #EAEAEA;
+            
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: 'vt323';
+
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            gap: 20px;
+        }
+        .section {
+            flex: 1;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 15px;
+        }
+
+        h1{
+            font-size: 60px;
+            color: crimson;
+        }
+
+        p{
+            color: #A1D6CB;
+            font-family:'Share Teech';
+            font-size: 25px;
+        }
+        .section h2 {
+            display: flex;
+            margin-top: 0;
+            color: #333;
+            font-family: 'Share Teech';
+            font-size: 20px;
+            color:crimson;
+            justify-content: center;
+            
+        }
+        #noticias{
+            font-size: 20px;
+        }
+        .item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item img {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+        .item a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .item a:hover {
+            text-decoration: underline;
+        }
+        .item p {
+            margin: 5px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./src/img/Aura_Geek.jpg" width="800" height="380" alt="">
+    
+    </header >
+   
+    <div class="container">
+        <div class="section" id="noticias">
+            <h2>Novidades dos Sites Geek</h2>
+            <!-- Notícias serão inseridas aqui pelo JavaScript -->
+        </div>
+        <div class="section" id="videos">
+            <h2>Vídeos do YouTube</h2>
+            <!-- Vídeos serão inseridas aqui pelo JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Dados fictícios de exemplo com thumbnails (substitua por feeds reais via RSS ou API)
+        const noticias = [
+            { 
+                titulo: "5 animes curtos (e geniais) para maratonar em um dia", 
+                fonte: "Jovem Nerd", 
+                link: "https://jovemnerd.com.br/noticias/animes-e-mangas/5-animes-curtos-e-geniais-para-maratona", 
+                data: "29/03/2025",
+                thumb: "https://uploads.jovemnerd.com.br/wp-content/uploads/2025/03/animes_curtos_e_geniais_para_maratonar_em_um_dia__322v3ou8.jpg?ims=1210x544/filters:quality(75)" // Exemplo fictício
+            },
+            { 
+                titulo: "Daredevil Born Again: 5 Razões para Assistir a Nova Temporada", 
+                fonte: "Geeklando", 
+                link: "https://www.geeklando.com.br/daredevil-born-again/", 
+                data: "28/03/2025" ,
+                thumb: "https://www.geeklando.com.br/wp-content/uploads/2025/03/daredevil-born-again-5-razoes-para-assistir-a-nova-temporada-860x483.jpg" // Exemplo fictício
+            },
+            { 
+                titulo: "Veja o que chega em abril de 2025 na Netflix", 
+                fonte: "Linhagemgeek", 
+                link: "https://linhagemgeek.filmow.com/noticias/43272/veja-o-que-chega-em-abril-de-2025-na-netflix/", 
+                data: "27/03/2025",
+                thumb: "https://media.fstatic.com/Oti_HzGtY6UE-tXh5cTRLmRq7LU=/full-fit-in/629x300/media/articles/main/2025/03/28/aaaaqsudqzufh48r3nucqnatwseuldawm3ovon2lxcq2gq6jmqgkz8vdiyalr_w_lp5CGoH.jpg" // Exemplo fictício
+            },
+
+            { 
+                titulo: "Veja o que chega em abril de 2025 na Netflix", 
+                fonte: "Linhagemgeek", 
+                link: "https://linhagemgeek.filmow.com/noticias/43272/veja-o-que-chega-em-abril-de-2025-na-netflix/", 
+                data: "27/03/2025",
+                thumb: "https://media.fstatic.com/Oti_HzGtY6UE-tXh5cTRLmRq7LU=/full-fit-in/629x300/media/articles/main/2025/03/28/aaaaqsudqzufh48r3nucqnatwseuldawm3ovon2lxcq2gq6jmqgkz8vdiyalr_w_lp5CGoH.jpg" // Exemplo fictício
+            }
+
+
+
+            
+        ];
+
+        const videos = [
+            { 
+                titulo: "BOMBA! TODOS OS PERSONAGENS DE VINGADORES: DOOMSDAY FORAM ANUNCIADOS", 
+                canal: "Ei Nerd", 
+                link: "https://youtu.be/crXc88qoGoo?si=KeHLTuG4hOccoYEk", 
+                data: "29/03/2025",
+                thumb: "https://i.ytimg.com/an_webp/Sb8yZUNVk4g/mqdefault_6s.webp?du=3000&sqp=CLCln78G&rs=AOn4CLBCoBSyx2aPhUKnkYDJRgupEjipUg" // Simulação (use ID real do vídeo)
+            },
+            { 
+                titulo: "ATÉ A REVISTA VEJA DETONOU A BRANCA DE NEVE ''É WOKE''", 
+                canal: "HERÓIS E MAIS", 
+                link: "https://youtu.be/aqkk4uEyJUw?si=VhkgqX7c-OUcSf6l", 
+                data: "28/03/2025",
+                thumb: "https://i.ytimg.com/vi/9yz-tfiikhw/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDK8c6dhJOzTuT1-xiytGsrzIe8xA" // Simulação
+            },
+            { 
+                titulo: "POWER RANGERS oficialmente ACABOU! REBOOT CONFIRMADO NA DISNEY!", 
+                canal: "Mundo Geek", 
+                link: "https://youtu.be/eXn2d3n7wTY?si=5U0bjbpmRtUBD1Qg", 
+                data: "27/03/2025",
+                thumb: "https://i.ytimg.com/vi/eXn2d3n7wTY/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCAHpRVyBAa1nQXpQreApCfsH_wTA" // Simulação
+            }
+        ];
+
+        // Função para exibir notícias
+        function exibirNoticias() {
+            const noticiasDiv = document.getElementById("noticias");
+            noticias.forEach(noticia => {
+                const item = document.createElement("div");
+                item.className = "item";
+                item.innerHTML = `
+                    <img src="${noticia.thumb}" alt="Thumbnail de ${noticia.fonte}">
+                    <div>
+                        <a href="${noticia.link}" target="_blank">${noticia.titulo}</a>
+                        <p>Fonte: ${noticia.fonte} | ${noticia.data}</p>
+                    </div>
+                `;
+                noticiasDiv.appendChild(item);
+            });
+        }
+
+        // Função para exibir vídeos
+        function exibirVideos() {
+            const videosDiv = document.getElementById("videos");
+            videos.forEach(video => {
+                const item = document.createElement("div");
+                item.className = "item";
+                item.innerHTML = `
+                    <img src="${video.thumb}" alt="Thumbnail de ${video.canal}">
+                    <div>
+                        <a href="${video.link}" target="_blank">${video.titulo}</a>
+                        <p>Canal: ${video.canal} | ${video.data}</p>
+                    </div>
+                `;
+                videosDiv.appendChild(item);
+            });
+        }
+
+        // Executar as funções ao carregar a página
+        exibirNoticias();
+        exibirVideos();
+    </script>
+    <footer>&copy; Aura Geek 2025</footer>
+</body>
+</html>
